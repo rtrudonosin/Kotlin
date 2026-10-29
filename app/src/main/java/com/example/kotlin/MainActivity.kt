@@ -81,6 +81,40 @@ fun Calculator() {
             label = { Text("Символ a или g") },
             modifier = Modifier.fillMaxWidth()
         )
+        Button(
+            onClick = {
+                val a = number1.replace(',', '.').toDoubleOrNull()
+                val b = number2.replace(',', '.').toDoubleOrNull()
+                val c = number3.replace(',', '.').toDoubleOrNull()
+                val s = symbol.trim().lowercase()
+
+                result = if (a == null || b == null || c == null) {
+                    "Ошибка! Введите три числа."
+                } else {
+                    when (s) {
+                        "a" -> {
+                            val average = (a + b + c) / 3.0
+                            "Среднее арифметическое: $average"
+                        }
+
+                        "g" -> {
+                            val average = cbrt(a * b * c)
+                            "Среднее геометрическое: $average"
+                        }
+
+                        else -> "Ошибка! Неизвестный символ."
+                    }
+                }
+            },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("Вычислить")
+        }
+
+        Text(
+            text = result,
+            style = MaterialTheme.typography.bodyLarge
+        )
     }
 }
 
