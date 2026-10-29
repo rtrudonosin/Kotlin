@@ -34,10 +34,20 @@ fun Calculator() {
     var number3 by remember { mutableStateOf("") }
     var symbol by remember { mutableStateOf("") }
     var result by remember { mutableStateOf("Результат появится здесь") }
-
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(24.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp)
+    ) {
+        Text(
+            text = "Калькулятор",
+            style = MaterialTheme.typography.headlineMedium
+        )
+    }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun CalculatorPreview() {
     MaterialTheme {
