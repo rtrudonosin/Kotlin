@@ -44,6 +44,43 @@ fun Calculator() {
             text = "Калькулятор",
             style = MaterialTheme.typography.headlineMedium
         )
+        OutlinedTextField(
+            value = number1,
+            onValueChange = { number1 = it },
+            label = { Text("Первое число") },
+            keyboardOptions = KeyboardOptions(
+                keyboardType = KeyboardType.Decimal
+            ),
+            modifier = Modifier.fillMaxWidth()
+        )
+        OutlinedTextField(
+            value = number2,
+            onValueChange = { number2 = it },
+            label = { Text("Второе число") },
+            keyboardOptions = KeyboardOptions(
+                keyboardType = KeyboardType.Decimal
+            ),
+            modifier = Modifier.fillMaxWidth()
+        )
+
+        OutlinedTextField(
+            value = number3,
+            onValueChange = { number3 = it },
+            label = { Text("Третье число") },
+            keyboardOptions = KeyboardOptions(
+                keyboardType = KeyboardType.Decimal
+            ),
+            modifier = Modifier.fillMaxWidth()
+        )
+
+        OutlinedTextField(
+            value = symbol,
+            onValueChange = {
+                if (it.length <= 1) symbol = it
+            },
+            label = { Text("Символ a или g") },
+            modifier = Modifier.fillMaxWidth()
+        )
     }
 }
 
