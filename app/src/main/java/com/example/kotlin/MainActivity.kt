@@ -26,3 +26,21 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+@Composable
+fun Calculator() {
+    var number1 by remember { mutableStateOf("") }
+    var number2 by remember { mutableStateOf("") }
+    var number3 by remember { mutableStateOf("") }
+    var symbol by remember { mutableStateOf("") }
+    var result by remember { mutableStateOf("Результат появится здесь") }
+
+}
+
+@Preview
+@Composable
+fun CalculatorPreview() {
+    MaterialTheme {
+        Calculator()
+    }
+}
